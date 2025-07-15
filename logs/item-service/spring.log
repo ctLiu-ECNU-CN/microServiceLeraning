@@ -1,0 +1,14 @@
+17:14:51:014  INFO 49614 --- [main] com.hmall.item.ItemApplication           : Starting ItemApplication using Java 11.0.16 on 192.168.5.12 with PID 49614 (/home/ctliu/workSpace/hmall/item-service/target/classes started by ctliu in /home/ctliu/workSpace/hmall)
+17:14:51:014 DEBUG 49614 --- [main] com.hmall.item.ItemApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+17:14:51:015  INFO 49614 --- [main] com.hmall.item.ItemApplication           : The following 1 profile is active: "local"
+17:14:51:478  INFO 49614 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+17:14:51:482  INFO 49614 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+17:14:51:482  INFO 49614 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+17:14:51:514  INFO 49614 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+17:14:51:514  INFO 49614 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 483 ms
+17:14:51:837  INFO 49614 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+17:14:51:879  INFO 49614 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+17:14:51:880  INFO 49614 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+17:14:51:881  INFO 49614 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+17:14:51:891  INFO 49614 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+17:14:51:944  INFO 49614 --- [main] com.hmall.item.ItemApplication           : Started ItemApplication in 1.098 seconds (JVM running for 1.363)
