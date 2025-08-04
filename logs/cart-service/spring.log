@@ -60,3 +60,4 @@
 05:08:40:496  INFO 41796 --- [nacos-grpc-client-executor-5565] com.alibaba.nacos.common.remote.client   : [d4a105b5-9f21-447c-8a4a-a58b86ec50f7] Receive server push request, request = NotifySubscriberRequest, requestId = 29
 05:08:40:499  INFO 41796 --- [nacos-grpc-client-executor-5565] com.alibaba.nacos.common.remote.client   : [d4a105b5-9f21-447c-8a4a-a58b86ec50f7] Ack server push request, request = NotifySubscriberRequest, requestId = 29
 05:08:50:197  INFO 41796 --- [nacos-grpc-client-executor-5567] com.alibaba.nacos.common.remote.client   : [d4a105b5-9f21-447c-8a4a-a58b86ec50f7] Receive server push request, request = NotifySubscriberRequest, requestId = 31
+05:08:50:198  INFO 41796 --- [nacos-grpc-client-executor-5567] com.alibaba.nacos.common.remote.client   : [d4a105b5-9f21-447c-8a4a-a58b86ec50f7] Ack server push request, request = NotifySubscriberRequest, requestId = 31

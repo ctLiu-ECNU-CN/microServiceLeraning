@@ -2587,3 +2587,7 @@ java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 14 millise
 05:08:50:205  INFO 21132 --- [nacos-grpc-client-executor-8] com.alibaba.nacos.common.remote.client   : [b62f1e00-e1a3-4369-9e6c-6091c0db0fdc] Receive server push request, request = NotifySubscriberRequest, requestId = 32
 05:08:50:206  INFO 21132 --- [nacos-grpc-client-executor-8] com.alibaba.nacos.common.remote.client   : [b62f1e00-e1a3-4369-9e6c-6091c0db0fdc] Ack server push request, request = NotifySubscriberRequest, requestId = 32
 05:08:50:938  INFO 21132 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+05:08:50:939  INFO 21132 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+05:08:50:941  INFO 21132 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+05:08:50:953  INFO 21132 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+05:08:51:011  INFO 21132 --- [main] com.hmall.item.ItemApplication           : Started ItemApplication in 7.959 seconds (JVM running for 8.466)
