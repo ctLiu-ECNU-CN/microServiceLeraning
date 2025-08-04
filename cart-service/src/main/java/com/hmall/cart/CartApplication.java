@@ -10,7 +10,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 //sudo nginx -c /usr/share/nginx/hmall-nginx/conf/nginx.conf
 @MapperScan("com.hmall.cart.mapper")
 @SpringBootApplication
-@EnableFeignClients
+@EnableFeignClients(basePackages = "com.heima.api.client")
 public class CartApplication {
     public static void main(String[] args) {
         SpringApplication.run(CartApplication.class, args);
