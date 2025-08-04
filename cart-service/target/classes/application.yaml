@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: cart-service
+  cloud:
+    nacos:
+      server-addr: 192.168.5.67:8848
+      username: nacos
+      password: nacos
   profiles:
     active: dev
   datasource:
