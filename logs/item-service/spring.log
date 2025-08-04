@@ -2373,3 +2373,57 @@ Consider the following:
 22:06:33:840 DEBUG 35768 --- [http-nio-0.0.0.0-8081-exec-1] c.h.i.mapper.ItemMapper.selectBatchIds   : ==>  Preparing: SELECT id,name,price,stock,image,category,brand,spec,sold,comment_count,isAD,status,create_time,update_time,creater,updater FROM item WHERE id IN ( ? )
 22:06:33:850 DEBUG 35768 --- [http-nio-0.0.0.0-8081-exec-1] c.h.i.mapper.ItemMapper.selectBatchIds   : ==> Parameters: 100000006163(Long)
 22:06:33:866 DEBUG 35768 --- [http-nio-0.0.0.0-8081-exec-1] c.h.i.mapper.ItemMapper.selectBatchIds   : <==      Total: 1
+01:02:50:370  INFO 34184 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [821223be-2f4f-4295-b329-b60ae6fd1c64] Server healthy check fail, currentConnection = 1754316379630_192.168.5.10_56830
+01:02:50:386  INFO 34184 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [821223be-2f4f-4295-b329-b60ae6fd1c64] Try to reconnect to a new server, server is  not appointed, will choose a random server.
+01:02:50:391  INFO 35768 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [26521b54-8ac0-4621-808a-a8dd7a5a61fa] Server healthy check fail, currentConnection = 1754316385273_192.168.5.10_56929
+01:02:50:404  INFO 35768 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [26521b54-8ac0-4621-808a-a8dd7a5a61fa] Try to reconnect to a new server, server is  not appointed, will choose a random server.
+01:02:53:425 ERROR 35768 --- [com.alibaba.nacos.client.remote.worker] c.a.n.c.remote.client.grpc.GrpcClient    : Server check fail, please check server 192.168.5.67 ,port 9848 is available , error ={}
+
+java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 1 milliseconds, 582300 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@7c9b0e94[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@6821a5d3, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@227d1519, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@59f270d6}}}}}]]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:508) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.serverCheck(GrpcClient.java:148) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.connectToServer(GrpcClient.java:264) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.reconnect(RpcClient.java:522) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.lambda$start$2(RpcClient.java:370) ~[nacos-client-2.0.4.jar:na]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+01:02:53:430 ERROR 34184 --- [com.alibaba.nacos.client.remote.worker] c.a.n.c.remote.client.grpc.GrpcClient    : Server check fail, please check server 192.168.5.67 ,port 9848 is available , error ={}
+
+java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 14 milliseconds, 442600 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@487f3b2a[status=PENDING, info=[GrpcFuture{clientCall={delegate={delegate=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@2a1f72a7, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@70788c03, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@10275e6d}}}}}]]
+	at com.alibaba.nacos.shaded.com.google.common.util.concurrent.AbstractFuture.get(AbstractFuture.java:508) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.serverCheck(GrpcClient.java:148) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.grpc.GrpcClient.connectToServer(GrpcClient.java:264) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.reconnect(RpcClient.java:522) ~[nacos-client-2.0.4.jar:na]
+	at com.alibaba.nacos.common.remote.client.RpcClient.lambda$start$2(RpcClient.java:370) ~[nacos-client-2.0.4.jar:na]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:829) ~[na:na]
+
+01:02:53:686  INFO 35768 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [26521b54-8ac0-4621-808a-a8dd7a5a61fa] Success to connect a server [192.168.5.67:8848], connectionId = 1754326981769_192.168.5.10_50445
+01:02:53:686  INFO 34184 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [821223be-2f4f-4295-b329-b60ae6fd1c64] Success to connect a server [192.168.5.67:8848], connectionId = 1754326981769_192.168.5.10_50444
+01:02:53:686  INFO 35768 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [26521b54-8ac0-4621-808a-a8dd7a5a61fa] Abandon prev connection, server is 192.168.5.67:8848, connectionId is 1754316385273_192.168.5.10_56929
+01:02:53:686  INFO 34184 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [821223be-2f4f-4295-b329-b60ae6fd1c64] Abandon prev connection, server is 192.168.5.67:8848, connectionId is 1754316379630_192.168.5.10_56830
+01:02:53:686  INFO 35768 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : Close current connection 1754316385273_192.168.5.10_56929
+01:02:53:686  INFO 34184 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : Close current connection 1754316379630_192.168.5.10_56830
+01:02:53:688  INFO 34184 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [821223be-2f4f-4295-b329-b60ae6fd1c64] Notify disconnected event to listeners
+01:02:53:688  INFO 35768 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [26521b54-8ac0-4621-808a-a8dd7a5a61fa] Notify disconnected event to listeners
+01:02:53:689  WARN 34184 --- [nacos-grpc-client-executor-2395] c.a.n.c.remote.client.grpc.GrpcClient    : [1754316379630_192.168.5.10_56830]Ignore error event,isRunning:true,isAbandon=true
+01:02:53:690  INFO 35768 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [26521b54-8ac0-4621-808a-a8dd7a5a61fa] Notify connected event to listeners.
+01:02:53:692  INFO 34184 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [821223be-2f4f-4295-b329-b60ae6fd1c64] Notify connected event to listeners.
+01:02:53:693  WARN 35768 --- [nacos-grpc-client-executor-2378] c.a.n.c.remote.client.grpc.GrpcClient    : [1754316385273_192.168.5.10_56929]Ignore error event,isRunning:true,isAbandon=true
+01:02:55:990  INFO 35768 --- [nacos-grpc-client-executor-2382] com.alibaba.nacos.common.remote.client   : [26521b54-8ac0-4621-808a-a8dd7a5a61fa] Receive server push request, request = NotifySubscriberRequest, requestId = 18
+01:02:55:991  INFO 35768 --- [nacos-grpc-client-executor-2382] com.alibaba.nacos.common.remote.client   : [26521b54-8ac0-4621-808a-a8dd7a5a61fa] Ack server push request, request = NotifySubscriberRequest, requestId = 18
+01:02:55:991  INFO 34184 --- [nacos-grpc-client-executor-2399] com.alibaba.nacos.common.remote.client   : [821223be-2f4f-4295-b329-b60ae6fd1c64] Receive server push request, request = NotifySubscriberRequest, requestId = 17
+01:02:55:991  INFO 34184 --- [nacos-grpc-client-executor-2399] com.alibaba.nacos.common.remote.client   : [821223be-2f4f-4295-b329-b60ae6fd1c64] Ack server push request, request = NotifySubscriberRequest, requestId = 17
+01:02:56:720  INFO 35768 --- [nacos-grpc-client-executor-2383] com.alibaba.nacos.common.remote.client   : [26521b54-8ac0-4621-808a-a8dd7a5a61fa] Receive server push request, request = NotifySubscriberRequest, requestId = 22
+01:02:56:720  INFO 34184 --- [nacos-grpc-client-executor-2400] com.alibaba.nacos.common.remote.client   : [821223be-2f4f-4295-b329-b60ae6fd1c64] Receive server push request, request = NotifySubscriberRequest, requestId = 21
+01:02:56:720  INFO 35768 --- [nacos-grpc-client-executor-2383] com.alibaba.nacos.common.remote.client   : [26521b54-8ac0-4621-808a-a8dd7a5a61fa] Ack server push request, request = NotifySubscriberRequest, requestId = 22
+01:02:56:720  INFO 34184 --- [nacos-grpc-client-executor-2400] com.alibaba.nacos.common.remote.client   : [821223be-2f4f-4295-b329-b60ae6fd1c64] Ack server push request, request = NotifySubscriberRequest, requestId = 21

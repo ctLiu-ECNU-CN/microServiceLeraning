@@ -5,6 +5,7 @@ import cn.hutool.core.util.RandomUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.hmall.cart.client.ItemClient;
 import com.hmall.cart.domain.dto.CartFormDTO;
 import com.hmall.cart.domain.dto.ItemDTO;
 import com.hmall.cart.domain.po.Cart;
@@ -48,6 +49,7 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
 
 //    注入服务
     private final DiscoveryClient discoveryClient;
+    private final ItemClient itemClient;
 
     @Override
     public void addItem2Cart(CartFormDTO cartFormDTO) {
@@ -95,27 +97,28 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
         // 1.获取商品id
         Set<Long> itemIds = vos.stream().map(CartVO::getItemId).collect(Collectors.toSet());
 //        根据服务名称获取服务实例
-        List<ServiceInstance> instances = discoveryClient.getInstances("item-service");
-        if(CollUtils.isEmpty(instances)){
-            return;
-        }
-//        随机 实现 负载均衡
-        ServiceInstance instance = instances.get(RandomUtil.randomInt(instances.size()));
-        ResponseEntity<List<ItemDTO>> responce = restTemplate.exchange(instance.getUri() + "/items?ids={ids}",
-                HttpMethod.GET,
-                null,
-                new ParameterizedTypeReference<List<ItemDTO>>() {
+//        List<ServiceInstance> instances = discoveryClient.getInstances("item-service");
+//        if(CollUtils.isEmpty(instances)){
+//            return;
+//        }
+////        随机 实现 负载均衡
+//        ServiceInstance instance = instances.get(RandomUtil.randomInt(instances.size()));
+//        ResponseEntity<List<ItemDTO>> responce = restTemplate.exchange(instance.getUri() + "/items?ids={ids}",
+//                HttpMethod.GET,
+//                null,
+//                new ParameterizedTypeReference<List<ItemDTO>>() {
+//
+//                },
+//                Map.of("ids", CollUtil.join(itemIds, ",")));
 
-                },
-                Map.of("ids", CollUtil.join(itemIds, ",")));
+////        解析
+//        if(!responce.getStatusCode().is2xxSuccessful()){
+////            解析失败
+//            return;
+//        }
+//        List<ItemDTO> items = responce.getBody();
 
-//        解析
-        if(!responce.getStatusCode().is2xxSuccessful()){
-//            解析失败
-            return;
-        }
-
-        List<ItemDTO> items = responce.getBody();
+        List<ItemDTO> items = itemClient.queryItemByIds(itemIds);
         if(CollUtils.isEmpty(items)){
             return;
         }
