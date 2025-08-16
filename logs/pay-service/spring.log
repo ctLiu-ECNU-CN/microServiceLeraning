@@ -1,0 +1,10 @@
+01:17:34:275  INFO 45848 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [64b1b327-f04a-425f-b18c-49fc5e9257d8] Server healthy check fail, currentConnection = 1755248352023_192.168.5.10_53048
+01:17:34:278  INFO 45848 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [64b1b327-f04a-425f-b18c-49fc5e9257d8] Try to reconnect to a new server, server is  not appointed, will choose a random server.
+01:17:34:411  INFO 45848 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [64b1b327-f04a-425f-b18c-49fc5e9257d8] Success to connect a server [192.168.5.67:8848], connectionId = 1755278254270_192.168.5.10_49241
+01:17:34:411  INFO 45848 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [64b1b327-f04a-425f-b18c-49fc5e9257d8] Abandon prev connection, server is 192.168.5.67:8848, connectionId is 1755248352023_192.168.5.10_53048
+01:17:34:411  INFO 45848 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : Close current connection 1755248352023_192.168.5.10_53048
+01:17:34:413  INFO 45848 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [64b1b327-f04a-425f-b18c-49fc5e9257d8] Notify disconnected event to listeners
+01:17:34:413  WARN 45848 --- [nacos-grpc-client-executor-8179] c.a.n.c.remote.client.grpc.GrpcClient    : [1755248352023_192.168.5.10_53048]Ignore error event,isRunning:true,isAbandon=true
+01:17:34:413  INFO 45848 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [64b1b327-f04a-425f-b18c-49fc5e9257d8] Notify connected event to listeners.
+01:17:36:533  INFO 45848 --- [nacos-grpc-client-executor-8183] com.alibaba.nacos.common.remote.client   : [64b1b327-f04a-425f-b18c-49fc5e9257d8] Receive server push request, request = NotifySubscriberRequest, requestId = 182
+01:17:36:533  INFO 45848 --- [nacos-grpc-client-executor-8183] com.alibaba.nacos.common.remote.client   : [64b1b327-f04a-425f-b18c-49fc5e9257d8] Ack server push request, request = NotifySubscriberRequest, requestId = 182
