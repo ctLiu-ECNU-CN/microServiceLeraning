@@ -20,6 +20,14 @@ spring:
           uri: lb://cart-service # 路由的目标服务，lb代表负载均衡，会从注册中心拉取服务列表 (查看对应的yam文件里的名字)
           predicates: # 路由断言，判断当前请求是否符合当前规则，符合则路由到目标服务
             - Path=/carts/** # 这里是以请求路径作为判断规则(查看对应的controller里的路径)
+        - id: pay-service
+          uri: lb://pay-service
+          predicates:
+            - Path=/pay-orders/**
+        - id: trade-service
+          uri: lb://trade-service
+          predicates:
+            - Path=/orders/**
       default-filters:
         - AddRequestHeader=truth, anyone long-press like button will be rich
         - PrintAny

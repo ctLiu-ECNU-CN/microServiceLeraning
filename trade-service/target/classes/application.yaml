@@ -23,6 +23,7 @@ mybatis-plus:
 logging:
   level:
     com.heima: debug
+    com.hmall: debug
   pattern:
     dateformat: HH:mm:ss:SSS
   file:

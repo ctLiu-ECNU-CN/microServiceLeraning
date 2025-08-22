@@ -5,6 +5,8 @@ D:\workSpaces\hmall-backend\microServiceLeraning\hm-common\src\main\java\com\hma
 D:\workSpaces\hmall-backend\microServiceLeraning\hm-common\src\main\java\com\hmall\common\utils\CookieBuilder.java
 D:\workSpaces\hmall-backend\microServiceLeraning\hm-common\src\main\java\com\hmall\common\config\MyBatisConfig.java
 D:\workSpaces\hmall-backend\microServiceLeraning\hm-common\src\main\java\com\hmall\common\exception\DbException.java
+D:\workSpaces\hmall-backend\microServiceLeraning\hm-common\src\main\java\com\hmall\common\config\MvcConfig.java
+D:\workSpaces\hmall-backend\microServiceLeraning\hm-common\src\main\java\com\hmall\common\interceptors\UserInfoInterceptor.java
 D:\workSpaces\hmall-backend\microServiceLeraning\hm-common\src\main\java\com\hmall\common\utils\BeanUtils.java
 D:\workSpaces\hmall-backend\microServiceLeraning\hm-common\src\main\java\com\hmall\common\domain\PageQuery.java
 D:\workSpaces\hmall-backend\microServiceLeraning\hm-common\src\main\java\com\hmall\common\utils\Convert.java

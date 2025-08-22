@@ -25,11 +25,7 @@ mybatis-plus:
       id-type: auto
 logging:
   level:
-    com.heima: debug
-  pattern:
-    dateformat: HH:mm:ss:SSS
-  file:
-    path: "logs/${spring.application.name}"
+    com.hmall: debug
 knife4j:
   enable: true
   openapi:
