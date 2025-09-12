@@ -1,0 +1,10 @@
+com\heima\api\config\DefaultFeignConfig$1.class
+com\heima\api\dto\ItemDTO.class
+com\heima\api\client\TradeClient.class
+com\heima\api\dto\OrderDetailDTO.class
+com\heima\api\dto\PayApplyDTO.class
+com\heima\api\client\ItemClient.class
+com\heima\api\client\CartClient.class
+com\heima\api\client\UserClient.class
+com\heima\api\config\DefaultFeignConfig.class
+com\heima\api\dto\PayApplyDTO$PayApplyDTOBuilder.class

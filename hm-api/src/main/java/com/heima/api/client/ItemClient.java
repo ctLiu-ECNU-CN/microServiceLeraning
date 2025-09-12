@@ -2,6 +2,7 @@ package com.heima.api.client;
 
 
 
+import com.heima.api.client.fallback.ItemClientFallbackFactory;
 import com.heima.api.dto.ItemDTO;
 import com.heima.api.dto.OrderDetailDTO;
 import io.swagger.annotations.ApiOperation;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Collection;
 import java.util.List;
 
-@FeignClient("item-service")
+@FeignClient(value = "item-service", fallbackFactory = ItemClientFallbackFactory.class)
 public interface ItemClient {
     @GetMapping("/items")
     List<ItemDTO> queryItemByIds(@RequestParam("ids") Collection<Long> ids);

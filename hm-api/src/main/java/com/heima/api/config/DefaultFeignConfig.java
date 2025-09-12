@@ -1,5 +1,6 @@
 package com.heima.api.config;
 
+import com.heima.api.client.fallback.ItemClientFallbackFactory;
 import com.hmall.common.utils.UserContext;
 import feign.Logger;
 import feign.RequestInterceptor;
@@ -25,5 +26,11 @@ public class DefaultFeignConfig {
                 template.header("user-info",user.toString());
             }
         };
+    }
+
+
+    @Bean
+    public ItemClientFallbackFactory itemClientFallbackFactory() {
+        return new ItemClientFallbackFactory();
     }
 }

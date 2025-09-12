@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "hm.cart",
+      "type": "com.hmall.cart.config.CartProperties",
+      "sourceType": "com.hmall.cart.config.CartProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "hm.cart.max-items",
+      "type": "java.lang.Integer",
+      "sourceType": "com.hmall.cart.config.CartProperties"
+    }
+  ],
+  "hints": []
+}
