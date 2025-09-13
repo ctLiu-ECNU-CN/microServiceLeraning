@@ -3,10 +3,13 @@ package com.hmall.item.es;
 
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.json.JSONUtil;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.hmall.common.utils.CollUtils;
 import com.hmall.item.domain.po.Item;
 import com.hmall.item.domain.po.ItemDoc;
 import com.hmall.item.service.IItemService;
 import org.apache.http.HttpHost;
+import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.get.GetRequest;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexRequest;
@@ -25,6 +28,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
+import java.util.List;
 
 @SpringBootTest
 public class ElasticDocumentTest {
@@ -102,6 +106,37 @@ public class ElasticDocumentTest {
         if(client != null){
             client.close();
         }
+    }
+
+
+    @Test
+    void testBulkDoc() throws IOException {
+        int pageNo = 1, pageSize = 500;
+        while (true) {
+//        1.准备文档数据
+            Page<Item> page = itemService.lambdaQuery()
+                    .eq(Item::getStatus, 1)
+                    .page(Page.of(pageNo, pageSize));
+            if(CollUtils.isEmpty(page.getRecords())){
+//                records集合是空 => 所有数据都获取到了,
+                return;
+            }
+//        Request
+            BulkRequest bulkRequest = new BulkRequest();
+
+//        准备批处理的数据
+            List<Item> records = page.getRecords();
+            for (Item item : records) {
+                ItemDoc itemdoc = BeanUtil.copyProperties(item, ItemDoc.class);
+                bulkRequest.add(new IndexRequest("items").id(itemdoc.getId()).source(JSONUtil.toJsonStr(itemdoc), XContentType.JSON));
+            }
+//        发送一页的请求
+            client.bulk(bulkRequest, RequestOptions.DEFAULT);
+
+//            翻页
+            pageNo++;
+        }
+
     }
 
 
